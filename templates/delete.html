@@ -1,0 +1,6 @@
+ 
+ 
+<form method="POST" action="{% url 'employeedelete' .pk%}">
+    {% csrf_token %}
+    <input type ="submit" value="Delete"> 
+<form> 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+    <title>Gusto DASHBOARD</title>
+  </head>
+
+  <body>
+{% block body %}
+
+
+{% endblock body %}
+
+<div id="sidebar">
+        <div class="sidebar__title">
+          <div class="sidebar__img">
+            <h1>Gusto Info Sys</h1>
+          </div>
+          <i
+            onclick="closeSidebar()"
+            class="fa fa-times"
+            id="sidebarIcon"
+            aria-hidden="true"
+          ></i>
+        </div>
+
+        <!-- Side Bar -->
+
+        <div class="sidebar__menu">
+          <div class="sidebar__link active_menu_link">
+            <i class="fa fa-home"></i>
+            <a href="/">Dashboard</a>
+          </div>
+          <h2>Gusto Dashboard</h2>
+          <div class="sidebar__link">
+            <i class="fa fa-building-o"></i>
+            <a href="{% url 'myapp:employee' %}">Employee Management</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-archive"></i>
+            <a href="{% url 'inventoryhome'%}">Inventory Management</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-handshake-o"></i>
+            <a href="#">Contracts</a>
+          </div>
+          <h2>LEAVE</h2>
+          <div class="sidebar__link">
+            <i class="fa fa-question"></i>
+            <a href="#">Requests</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-sign-out"></i>
+            <a href="#">Leave Policy</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-calendar-check-o"></i>
+            <a href="#">Special Days</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-files-o"></i>
+            <a href="{% url 'myapp:applyleave' %}">Apply for leave</a>
+          </div>
+          <h2>PAYROLL</h2>
+          <div class="sidebar__link">
+            <i class="fa fa-money"></i>
+            <a href="{% url 'myapp:payroll' %}">Payroll</a>
+          </div>
+          <div class="sidebar__link">
+            <i class="fa fa-briefcase"></i>
+            <a href="#">Paygrade</a>
+          </div>
+          <div class="sidebar__logout">
+            <i class="fa fa-power-off"></i>
+            <a href="{% url 'myapp:logoutuser' %}">Log out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src={% static "script.js"%}></script>
+</body>
+
+</html>
